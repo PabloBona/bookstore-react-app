@@ -16,12 +16,12 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family:
-    source-code-pro,
-    Menlo,
-    Monaco,
-    Consolas,
-    'Courier New',
-    monospace;
+html {
+  margin: 0;
+  padding: 0;
+}
+
+#root {
+  background-color: #dad8d8;
+  height: 100vh;
 }
