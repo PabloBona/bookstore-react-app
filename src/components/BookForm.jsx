@@ -27,16 +27,6 @@ function BookForm({ onAdd }) {
         <h2 className="text-secondary">Add New Book</h2>
         <div className="col">
           <form onSubmit={handleSubmit}>
-            <label htmlFor="author">
-              Author:
-              <input
-                type="text"
-                id="author"
-                value={author}
-                onChange={(e) => setAuthor(e.target.value)}
-                aria-labelledby="author-label"
-              />
-            </label>
             <label htmlFor="title">
               Title:
               <input
@@ -45,6 +35,16 @@ function BookForm({ onAdd }) {
                 value={title}
                 onChange={(e) => setTitle(e.target.value)}
                 aria-labelledby="title-label"
+              />
+            </label>
+            <label htmlFor="author">
+              Author:
+              <input
+                type="text"
+                id="author"
+                value={author}
+                onChange={(e) => setAuthor(e.target.value)}
+                aria-labelledby="author-label"
               />
             </label>
             <button type="submit">Add</button>
