@@ -66,8 +66,8 @@ The following stacks were used
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- ### 🚀 Live Demo <a name="live-demo"></a>
-<a href=#>Live Demo</a> -->
+### 🚀 Live Demo <a name="live-demo"></a>
+<a href="https://stalwart-sfogliatella-71efdb.netlify.app/">Live Demo</a>
 
 <!-- GETTING STARTED -->
 <br>
