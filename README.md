@@ -15,7 +15,7 @@
   - [🛠 Built With ](#-built-with-)
     - [Tech Stack ](#tech-stack-)
     - [Key Features ](#key-features-)
-  <!-- - [🚀 Live Demo ](#-live-demo-) -->
+  - [🚀 Live Demo ](#-live-demo-)
   - [💻 Getting Started ](#getting-started)
     - [Install](#-install)
     - [Usage](#-usage)
@@ -66,8 +66,8 @@ The following stacks were used
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- ### 🚀 Live Demo <a name="live-demo"></a>
-<a href=#>Live Demo</a> -->
+### 🚀 Live Demo <a name="live-demo"></a>
+<a href="https://stalwart-sfogliatella-71efdb.netlify.app/">Live Demo</a>
 
 <!-- GETTING STARTED -->
 <br>
