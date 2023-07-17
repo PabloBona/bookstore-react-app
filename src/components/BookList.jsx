@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
-
+import React from 'react';
+import PropTypes from 'prop-types';
 import Book from './Book';
 import BookForm from './BookForm';
 
-function BookList() {
-  const [books, setBooks] = useState([]);
-
+function BookList({
+  setBooks, books, author, setAuthor, title, setTitle,
+}) {
   const handleAddBook = (newBook) => {
     setBooks((prevBooks) => [...prevBooks, newBook]);
   };
@@ -24,10 +24,30 @@ function BookList() {
       </div>
       <hr className="border my-3" />
       <div className="col-12">
-        <BookForm onAdd={handleAddBook} />
+        <BookForm
+          onAdd={handleAddBook}
+          author={author}
+          setAuthor={setAuthor}
+          title={title}
+          setTitle={setTitle}
+        />
       </div>
     </article>
   );
 }
 
+const bookShape = PropTypes.shape({
+  id: PropTypes.number.isRequired,
+  title: PropTypes.string.isRequired,
+  author: PropTypes.string.isRequired,
+});
+
+BookList.propTypes = {
+  setBooks: PropTypes.func.isRequired,
+  setTitle: PropTypes.func.isRequired,
+  setAuthor: PropTypes.func.isRequired,
+  author: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  books: PropTypes.arrayOf(bookShape).isRequired,
+};
 export default BookList;
