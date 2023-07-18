@@ -1,10 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 
-function BookForm({ onAdd }) {
-  const [author, setAuthor] = useState('');
-  const [title, setTitle] = useState('');
-
+function BookForm({
+  onAdd, author, setAuthor, title, setTitle,
+}) {
   const capitalizeFirstLetter = (string) => string.charAt(0).toUpperCase() + string.slice(1);
 
   const handleSubmit = (e) => {
@@ -57,6 +56,10 @@ function BookForm({ onAdd }) {
 
 BookForm.propTypes = {
   onAdd: PropTypes.func.isRequired,
+  author: PropTypes.string.isRequired,
+  setAuthor: PropTypes.func.isRequired,
+  title: PropTypes.string.isRequired,
+  setTitle: PropTypes.func.isRequired,
 };
 
 export default BookForm;
