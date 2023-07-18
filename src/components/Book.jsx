@@ -2,8 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 function Book({ book, onDelete }) {
-  const { id, title, author } = book;
-
   return (
     <div className="container">
       <div className="row">
@@ -11,12 +9,12 @@ function Book({ book, onDelete }) {
           <div className="border bg-white p-3">
             <p>Category</p>
             <h5>
-              {title}
+              {book.title}
             </h5>
             <p className="text-primary">
-              {author}
+              {book.author}
             </p>
-            <button type="submit" onClick={() => onDelete(id)}>
+            <button type="submit" onClick={() => onDelete(book.id)}>
               Delete
             </button>
           </div>

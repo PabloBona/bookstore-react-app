@@ -19,7 +19,11 @@ function BookList({
       <h2 className="d-flex justify-content-center my-3">Book List</h2>
       <div className="col-12 my-2 p-3">
         {books.map((book) => (
-          <Book key={book.id} book={book} onDelete={() => handleRemoveBook(book.id)} />
+          <Book
+            key={book.id}
+            book={book}
+            onDelete={() => handleRemoveBook(book.id)}
+          />
         ))}
       </div>
       <hr className="border my-3" />
