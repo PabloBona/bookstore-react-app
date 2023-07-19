@@ -1,20 +1,24 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { useDispatch } from 'react-redux';
+import { addBook } from '../redux/books/booksSlice';
 
 function BookForm({
-  onAdd, author, setAuthor, title, setTitle,
+  author, setAuthor, title, setTitle,
 }) {
   const capitalizeFirstLetter = (string) => string.charAt(0).toUpperCase() + string.slice(1);
+
+  const dispatch = useDispatch();
 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (author && title) {
       const newBook = {
-        id: Date.now(),
+        itemId: Date.now(),
         author: capitalizeFirstLetter(author),
         title: capitalizeFirstLetter(title),
       };
-      onAdd(newBook);
+      dispatch(addBook(newBook));
       setAuthor('');
       setTitle('');
     }
@@ -23,8 +27,9 @@ function BookForm({
   return (
     <section className="container">
       <div className="row">
-        <h2 className="text-secondary">Add New Book</h2>
         <div className="col">
+          <hr />
+          <h2 className="text-secondary p-3">Add New Book</h2>
           <form onSubmit={handleSubmit}>
             <label htmlFor="title">
               Title:
@@ -55,7 +60,6 @@ function BookForm({
 }
 
 BookForm.propTypes = {
-  onAdd: PropTypes.func.isRequired,
   author: PropTypes.string.isRequired,
   setAuthor: PropTypes.func.isRequired,
   title: PropTypes.string.isRequired,

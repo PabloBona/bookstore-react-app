@@ -1,33 +1,38 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { useDispatch, useSelector } from 'react-redux';
 import Book from './Book';
 import BookForm from './BookForm';
+import { removeBook, addBook } from '../redux/books/booksSlice';
 
 function BookList({
-  setBooks, books, author, setAuthor, title, setTitle,
+  author, setAuthor, title, setTitle,
 }) {
-  const handleAddBook = (newBook) => {
-    setBooks((prevBooks) => [...prevBooks, newBook]);
-  };
+  const dispatch = useDispatch();
+  const books = useSelector((state) => state.books);
 
   const handleRemoveBook = (bookId) => {
-    setBooks((prevBooks) => prevBooks.filter((book) => book.id !== bookId));
+    dispatch(removeBook(bookId));
+  };
+
+  const handleAddBook = (newBook) => {
+    dispatch(addBook(newBook));
   };
 
   return (
     <article className="row">
-      <h2 className="d-flex justify-content-center my-3">Book List</h2>
-      <div className="col-12 my-2 p-3">
+
+      <div className="col-12">
         {books.map((book) => (
           <Book
-            key={book.id}
+            key={book.itemId}
             book={book}
-            onDelete={() => handleRemoveBook(book.id)}
+            onDelete={() => handleRemoveBook(book.itemId)}
           />
         ))}
       </div>
-      <hr className="border my-3" />
-      <div className="col-12">
+      <hr className="border" />
+      <div className="col-12 my-3">
         <BookForm
           onAdd={handleAddBook}
           author={author}
@@ -40,18 +45,11 @@ function BookList({
   );
 }
 
-const bookShape = PropTypes.shape({
-  id: PropTypes.number.isRequired,
-  title: PropTypes.string.isRequired,
-  author: PropTypes.string.isRequired,
-});
-
 BookList.propTypes = {
-  setBooks: PropTypes.func.isRequired,
-  setTitle: PropTypes.func.isRequired,
-  setAuthor: PropTypes.func.isRequired,
   author: PropTypes.string.isRequired,
+  setAuthor: PropTypes.func.isRequired,
   title: PropTypes.string.isRequired,
-  books: PropTypes.arrayOf(bookShape).isRequired,
+  setTitle: PropTypes.func.isRequired,
 };
+
 export default BookList;
