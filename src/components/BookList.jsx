@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
-import Book from './Book';
+import BookCard from './BookCard';
 import BookForm from './BookForm';
 import { removeBook, addBook } from '../redux/books/booksSlice';
 
@@ -24,7 +24,7 @@ function BookList({
 
       <div className="col-12">
         {books.map((book) => (
-          <Book
+          <BookCard
             key={book.itemId}
             book={book}
             onDelete={() => handleRemoveBook(book.itemId)}

@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Button from './Button';
 
-function Book({ book, onDelete }) {
+function BookCard({ book, onDelete }) {
   const { itemId, title, author } = book;
 
   const handleRemove = () => {
@@ -53,7 +53,7 @@ function Book({ book, onDelete }) {
   );
 }
 
-Book.propTypes = {
+BookCard.propTypes = {
   book: PropTypes.shape({
     itemId: PropTypes.number.isRequired,
     title: PropTypes.string.isRequired,
@@ -62,4 +62,4 @@ Book.propTypes = {
   onDelete: PropTypes.func.isRequired,
 };
 
-export default Book;
+export default BookCard;
