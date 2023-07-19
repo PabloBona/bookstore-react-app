@@ -1,20 +1,25 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { useDispatch } from 'react-redux';
+import { addBook } from '../redux/books/booksSlice';
+import Button from './Button';
 
 function BookForm({
-  onAdd, author, setAuthor, title, setTitle,
+  author, setAuthor, title, setTitle,
 }) {
   const capitalizeFirstLetter = (string) => string.charAt(0).toUpperCase() + string.slice(1);
+
+  const dispatch = useDispatch();
 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (author && title) {
       const newBook = {
-        id: Date.now(),
+        itemId: Date.now(),
         author: capitalizeFirstLetter(author),
         title: capitalizeFirstLetter(title),
       };
-      onAdd(newBook);
+      dispatch(addBook(newBook));
       setAuthor('');
       setTitle('');
     }
@@ -23,30 +28,37 @@ function BookForm({
   return (
     <section className="container">
       <div className="row">
-        <h2 className="text-secondary">Add New Book</h2>
-        <div className="col">
-          <form onSubmit={handleSubmit}>
-            <label htmlFor="title">
-              Title:
+        <div>
+          <hr />
+          <h2 className="text-secondary p-3 text-uppercase">Add New Book</h2>
+          <form className="col-12-sm" onSubmit={handleSubmit}>
+            <label className="px-3" htmlFor="title">
               <input
+                className="px-2 py-1 rounded border border-secondary"
                 type="text"
                 id="title"
                 value={title}
                 onChange={(e) => setTitle(e.target.value)}
                 aria-labelledby="title-label"
+                placeholder="Book title"
+                required
               />
             </label>
-            <label htmlFor="author">
-              Author:
+            <label className="px-3" htmlFor="author">
               <input
+                className="px-2 py-1 rounded border border-secondary"
                 type="text"
                 id="author"
                 value={author}
                 onChange={(e) => setAuthor(e.target.value)}
                 aria-labelledby="author-label"
+                placeholder="Book Author"
+                required
               />
             </label>
-            <button type="submit">Add</button>
+            <Button onClick={handleSubmit} type="submit">
+              <div className="bg-primary rounded p-1 text-white btn-reset">Add New Book</div>
+            </Button>
           </form>
         </div>
       </div>
@@ -55,7 +67,6 @@ function BookForm({
 }
 
 BookForm.propTypes = {
-  onAdd: PropTypes.func.isRequired,
   author: PropTypes.string.isRequired,
   setAuthor: PropTypes.func.isRequired,
   title: PropTypes.string.isRequired,
