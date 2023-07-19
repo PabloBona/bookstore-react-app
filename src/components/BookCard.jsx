@@ -40,7 +40,7 @@ function BookCard({ book, removeBook }) {
           </div>
           <div>
             {' '}
-            <p className="align-self-sm-center mx-3 fs-1">64%</p>
+            <p className="align-self-sm-center mx-3 fs-3">64%</p>
             <p className="align-self-sm-center mx-3 text-secondary">Completed</p>
 
           </div>
