@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import { addBook } from '../redux/books/booksSlice';
+import Button from './Button';
 
 function BookForm({
   author, setAuthor, title, setTitle,
@@ -51,7 +52,9 @@ function BookForm({
                 aria-labelledby="author-label"
               />
             </label>
-            <button type="submit">Add</button>
+            <Button onClick={handleSubmit} type="submit">
+              <div className="bg-primary rounded p-1 text-white">Add New Book</div>
+            </Button>
           </form>
         </div>
       </div>

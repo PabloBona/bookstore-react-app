@@ -3,11 +3,10 @@
 body {
   font-family: 'Bebas Neue', sans-serif;
   font-family: 'Roboto Slab', serif;
-}
-
-html {
   margin: 0;
   padding: 0;
+  height: 100%;
+  background-color: #efefef;
 }
 
 #root {
@@ -37,8 +36,8 @@ html {
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
- 
-.btn-reset:hover {
+.btn-reset:hover,
+.btn-reset:focus {
   color: #fff;
   background-color: #6c757d;
   border-color: #6c757d;
