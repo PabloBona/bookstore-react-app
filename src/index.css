@@ -60,7 +60,6 @@ body {
 @media (width <= 1000px) {
   .link-separator::after {
     display: none;
-    
   }
 }
 
