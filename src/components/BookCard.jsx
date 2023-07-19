@@ -30,15 +30,27 @@ function BookCard({ book, removeBook }) {
             </div>
           </div>
         </div>
-        <div className="col-2 align-self-center">
-          <p className="d-flex justify-content-center">64%</p>
+        <div className="d-flex col-4 align-self-center columne">
+          <div>
+            {' '}
+            <p className="d-flex justify-content-center oval-2 text-white">
+              <span className="align-items-sm-center align-self-md-center bg-body-tertiary d-flex p-md-3 rounded-5 text-light circ" />
+            </p>
+
+          </div>
+          <div>
+            {' '}
+            <p className="align-self-sm-center mx-3 fs-1">64%</p>
+            <p className="align-self-sm-center mx-3 text-secondary">Completed</p>
+
+          </div>
         </div>
-        <div className="col-5 py-3">
+        <div className="col-3 py-3">
           <div className="my-3">
             <p className="text-secondary">Current Chapter</p>
             <p>Chapter 23</p>
           </div>
-          <button className="col-md-8 text-white border border-primary rounded px-3 fz-5 bg-color" type="submit">
+          <button className="col-md-8 text-white border border-primary rounded fz-5 bg-color" type="submit">
             Update Progress
           </button>
         </div>
