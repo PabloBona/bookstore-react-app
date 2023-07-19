@@ -27,7 +27,7 @@ function BookList({
           <BookCard
             key={book.itemId}
             book={book}
-            onDelete={() => handleRemoveBook(book.itemId)}
+            removeBook={() => handleRemoveBook(book.itemId)}
           />
         ))}
       </div>

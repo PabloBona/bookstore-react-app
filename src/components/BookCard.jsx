@@ -2,11 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Button from './Button';
 
-function BookCard({ book, onDelete }) {
+function BookCard({ book, removeBook }) {
   const { itemId, title, author } = book;
 
   const handleRemove = () => {
-    onDelete(itemId);
+    removeBook(itemId);
   };
 
   return (
@@ -17,22 +17,16 @@ function BookCard({ book, onDelete }) {
             <p>Category</p>
             <h5 className="fw-bolder">{title}</h5>
             <p className="text-primary">{author}</p>
-            <div className="">
-              <span className="remove link-separator">
-                <Button onClick={() => { }}>
-                  Comment
-                </Button>
-              </span>
-              <span className="remove link-separator">
-                <Button onClick={handleRemove}>
-                  Remove
-                </Button>
-              </span>
-              <span className="remove link-separator">
-                <Button onClick={() => { }}>
-                  Edit
-                </Button>
-              </span>
+            <div className="mod-books">
+              <div className="remove link-separator mb-2">
+                <Button className="mb-2" onClick={() => { }}>Comment</Button>
+              </div>
+              <div className="remove link-separator mb-2">
+                <Button onClick={handleRemove}>Remove</Button>
+              </div>
+              <div className="remove mb-2">
+                <Button onClick={() => { }}>Edit</Button>
+              </div>
             </div>
           </div>
         </div>
@@ -59,7 +53,7 @@ BookCard.propTypes = {
     title: PropTypes.string.isRequired,
     author: PropTypes.string.isRequired,
   }).isRequired,
-  onDelete: PropTypes.func.isRequired,
+  removeBook: PropTypes.func.isRequired,
 };
 
 export default BookCard;
