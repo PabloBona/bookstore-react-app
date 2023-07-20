@@ -1,25 +1,36 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { useEffect, useState } from 'react';
+
 import { useDispatch } from 'react-redux';
-import { addBook } from '../redux/books/booksSlice';
+import axios from 'axios';
+
 import Button from './Button';
 
 function BookForm({
-  author, setAuthor, title, setTitle,
+  // eslint-disable-next-line react/prop-types
+  url,
 }) {
+  const [book, setBook] = useState({});
+  const [title, setTitle] = useState('');
+  const [author, setAuthor] = useState('');
+
+  useEffect(() => {
+    const URL = url;
+    axios.get(URL)
+      .then((res) => setBook(res.data));
+  });
   const capitalizeFirstLetter = (string) => string.charAt(0).toUpperCase() + string.slice(1);
 
   const dispatch = useDispatch();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (author && title) {
+    if (book.author && book.title) {
       const newBook = {
         itemId: Date.now(),
-        author: capitalizeFirstLetter(author),
-        title: capitalizeFirstLetter(title),
+        author: capitalizeFirstLetter(book.author),
+        title: capitalizeFirstLetter(book.title),
       };
-      dispatch(addBook(newBook));
+      dispatch(setBook(newBook));
       setAuthor('');
       setTitle('');
     }
@@ -29,6 +40,7 @@ function BookForm({
     <section className="container">
       <div className="row">
         <div>
+
           <hr />
           <h2 className="text-secondary p-3 text-uppercase">Add New Book</h2>
           <form className="col-12-sm" onSubmit={handleSubmit}>
@@ -65,12 +77,5 @@ function BookForm({
     </section>
   );
 }
-
-BookForm.propTypes = {
-  author: PropTypes.string.isRequired,
-  setAuthor: PropTypes.func.isRequired,
-  title: PropTypes.string.isRequired,
-  setTitle: PropTypes.func.isRequired,
-};
 
 export default BookForm;

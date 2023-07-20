@@ -1,13 +1,15 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+/* eslint-disable react/prop-types */
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 import Button from './Button';
 
-function BookCard({ book, removeBook }) {
-  const { itemId, title, author } = book;
-
-  const handleRemove = () => {
-    removeBook(itemId);
-  };
+function BookCard({ url }) {
+  const [book, setBook] = useState();
+  useEffect(() => {
+    const URL = url;
+    axios.get(URL)
+      .then((res) => setBook(res.data));
+  });
 
   return (
     <div className="container">
@@ -15,14 +17,14 @@ function BookCard({ book, removeBook }) {
         <div className="col-5">
           <div className="p-3">
             <p>Category</p>
-            <h5 className="fw-bolder">{title}</h5>
-            <p className="text-primary">{author}</p>
+            <h5 className="fw-bolder">{book.title}</h5>
+            <p className="text-primary">{book.author}</p>
             <div className="mod-books">
               <div className="remove link-separator mb-2">
                 <Button className="mb-2" onClick={() => { }}>Comment</Button>
               </div>
               <div className="remove link-separator mb-2">
-                <Button onClick={handleRemove}>Remove</Button>
+                <Button onClick={() => { }}>Remove</Button>
               </div>
               <div className="remove mb-2">
                 <Button onClick={() => { }}>Edit</Button>
@@ -58,14 +60,5 @@ function BookCard({ book, removeBook }) {
     </div>
   );
 }
-
-BookCard.propTypes = {
-  book: PropTypes.shape({
-    itemId: PropTypes.number.isRequired,
-    title: PropTypes.string.isRequired,
-    author: PropTypes.string.isRequired,
-  }).isRequired,
-  removeBook: PropTypes.func.isRequired,
-};
 
 export default BookCard;

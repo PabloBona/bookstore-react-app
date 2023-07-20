@@ -1,24 +1,20 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+
 import { useDispatch, useSelector } from 'react-redux';
 import BookCard from './BookCard';
 import BookForm from './BookForm';
-import { removeBook, addBook } from '../redux/books/booksSlice';
+import { setBook } from '../redux/books/booksSlice';
+// import { removeBook, addBook } from '../redux/books/booksSlice';
 
-function BookList({
-  author, setAuthor, title, setTitle,
-}) {
+function BookList() {
   const dispatch = useDispatch();
   const books = useSelector((state) => state.books);
 
   const handleRemoveBook = (bookId) => {
-    dispatch(removeBook(bookId));
+    dispatch(setBook(bookId));
   };
 
-  const handleAddBook = (newBook) => {
-    dispatch(addBook(newBook));
-  };
-
+  const url = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/Fm2ydOLEbPj67CnsICQF/books';
   return (
     <article className="row">
 
@@ -33,23 +29,10 @@ function BookList({
       </div>
       <hr className="border" />
       <div className="col-12 my-3">
-        <BookForm
-          onAdd={handleAddBook}
-          author={author}
-          setAuthor={setAuthor}
-          title={title}
-          setTitle={setTitle}
-        />
+        <BookForm url={url} />
       </div>
     </article>
   );
 }
-
-BookList.propTypes = {
-  author: PropTypes.string.isRequired,
-  setAuthor: PropTypes.func.isRequired,
-  title: PropTypes.string.isRequired,
-  setTitle: PropTypes.func.isRequired,
-};
 
 export default BookList;
