@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import axios from 'axios';
+import { v4 as uuidv4 } from 'uuid';
 import Button from './Button';
 
 function BookForm({ url }) {
@@ -35,10 +36,10 @@ function BookForm({ url }) {
   };
 
   // Renderiza los libros
-  const renderedBooks = Object.values(book).map((books, index) => (
-    <div key={index} className="container">
-      {books.map((book, bookIndex) => (
-        <div key={bookIndex} className="row bg-white border border-primary-subtle m-3 rounded">
+  const renderedBooks = Object.values(book).map((books) => (
+    <div key={uuidv4()} className="container">
+      {books.map((book) => (
+        <div key={uuidv4()} className="row bg-white border border-primary-subtle m-3 rounded">
           <div className="col-5">
             <div className="p-3">
               <p>Category</p>
