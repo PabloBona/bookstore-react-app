@@ -4,7 +4,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import BookCard from './BookCard';
 import BookForm from './BookForm';
 import { setBook } from '../redux/books/booksSlice';
-// import { removeBook, addBook } from '../redux/books/booksSlice';
 
 function BookList() {
   const dispatch = useDispatch();
@@ -17,9 +16,9 @@ function BookList() {
   const url = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/Fm2ydOLEbPj67CnsICQF/books';
   return (
     <article className="row">
-
       <div className="col-12">
-        {books.map((book) => (
+        {/* Assuming 'books' is an object, you can access its properties directly */}
+        {Object.values(books).map((book) => (
           <BookCard
             key={book.itemId}
             book={book}
