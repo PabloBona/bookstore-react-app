@@ -11,7 +11,7 @@ function BookCard({
     <div className="row bg-white border border-tertiary my-3 rounded">
       <div className="col-5">
         <div className="p-3">
-          <div>Category</div>
+          <div className="text-secondary">Category</div>
           <div className="fw-bolder fs-3">{book.title}</div>
           <p className="text-primary">{book.author}</p>
           <div className="mod-books">
