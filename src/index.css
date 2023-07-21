@@ -98,7 +98,7 @@ input {
   height: 80px;
   border-radius: 50%;
   /* stylelint-disable-next-line csstree/validator */
-  background: 
+  background:
     radial-gradient(closest-side, white 79%, transparent 80% 100%),
     conic-gradient(rgb(52 141 221) 75%, rgb(173 170 170) 0);
 }
