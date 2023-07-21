@@ -94,3 +94,13 @@ body {
     flex-direction: column;
   }
 }
+
+
+.oval-3 {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  /* stylelint-disable-next-line csstree/validator */
+  background: radial-gradient(closest-side, white 79%, transparent 80% 100%),
+              conic-gradient(from 75deg at 50% 50%, rgb(17 0 253) 75%, rgb(125 125 125) 0);
+}

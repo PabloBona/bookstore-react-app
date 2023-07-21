@@ -5,7 +5,7 @@ function Categories() {
     <div>
       <h2>Categories Page</h2>
       <div className="Rectangle-3">
-        <div className="oval-2" />
+        <div className="oval-3" />
       </div>
     </div>
   );
