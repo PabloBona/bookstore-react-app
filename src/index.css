@@ -208,7 +208,7 @@ p.autor {
 }
 
 @media (width <= 512px) {
- .update-progress {
-  font-size: 0.5rem;
- }
+  .update-progress {
+    font-size: 0.5rem;
+  }
 }

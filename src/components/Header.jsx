@@ -11,7 +11,7 @@ function Header() {
             <h2 className="fw-bolder my-3">Bookstore CMS</h2>
           </Link>
           <button
-            className="navbar-toggler"
+            className="navbar-toggler border-0"
             type="button"
             data-bs-toggle="collapse"
             data-bs-target="#navbarNav"
