@@ -206,3 +206,9 @@ p.autor {
     flex-direction: column;
   }
 }
+
+@media (width <= 512px) {
+ .update-progress {
+  font-size: 0.5rem;
+ }
+}

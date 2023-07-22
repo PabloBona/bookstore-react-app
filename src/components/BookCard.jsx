@@ -42,7 +42,7 @@ function BookCard({
           <p className="current-chapter">Current Chapter</p>
           <p className="chapter">Chapter 23</p>
         </div>
-        <button className="col-md-8 text-white border border-primary rounded text-sm bg-color" type="submit">
+        <button className="text-white border border-primary rounded text-sm bg-color" type="submit">
           <div className="m-1 update-progress">UPDATE PROGRESS</div>
         </button>
       </div>
