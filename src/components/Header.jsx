@@ -8,7 +8,7 @@ function Header() {
       <div className="container">
         <div className="d-flex align-items-sm-baseline">
           <Link className="navbar-brand" to="/">
-            <h2 className="text-primary fw-bolder">Bookstore CMS</h2>
+            <h2 className="fw-bolder my-3">Bookstore CMS</h2>
           </Link>
           <button
             className="navbar-toggler"

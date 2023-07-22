@@ -12,8 +12,8 @@ function BookCard({
       <div className="col-5">
         <div className="p-3">
           <div className="text-secondary">Category</div>
-          <div className="fw-bolder fs-3">{book.title}</div>
-          <p className="text-primary">{book.author}</p>
+          <div className="fw-bolder fs-3 title">{book.title}</div>
+          <p className="autor">{book.author}</p>
           <div className="mod-books">
             <div className="remove link-separator mb-2">
               <Button onClick={() => {}} className="mb-2">
@@ -39,11 +39,11 @@ function BookCard({
       </div>
       <div className="col-3 py-3">
         <div className="my-3">
-          <p className="text-secondary">Current Chapter</p>
-          <p>Chapter 23</p>
+          <p className="current-chapter">Current Chapter</p>
+          <p className="chapter">Chapter 23</p>
         </div>
-        <button className="col-md-8 text-white border border-primary rounded fz-5 bg-color" type="submit">
-          <div className="m-1">Update Progress</div>
+        <button className="col-md-8 text-white border border-primary rounded text-sm bg-color" type="submit">
+          <div className="m-1 update-progress">UPDATE PROGRESS</div>
         </button>
       </div>
     </div>

@@ -73,8 +73,8 @@ function BookForm({ url }) {
       <div className="row">
         <div className="col-12">
           <hr className="py-2" />
-          <h2 className="text-secondary my-3 text-uppercase fs-4 fw-bolder">Add New Book</h2>
-          <form className="col-form-label-lg">
+          <h2 className="add-tittle">Add New Book</h2>
+          <form className="col-form-label-lg add-book">
             <label className="px-3" htmlFor="title">
               <input
                 className="px-2 py-1 rounded border border-secondary input-title"
@@ -89,7 +89,7 @@ function BookForm({ url }) {
             </label>
             <label className="px-3" htmlFor="author">
               <input
-                className="px-2 py-1 rounded border border-secondary"
+                className="px-2 py-2 rounded border border-secondary input-author"
                 type="text"
                 id="author"
                 value={author}
@@ -100,7 +100,7 @@ function BookForm({ url }) {
               />
             </label>
             <Button onClick={handleAddBook} type="button">
-              <div className="btn btn-info text-light bg-primary">Add Book</div>
+              <div className="btn add-btn ">Add Book</div>
             </Button>
           </form>
           {error && <div className="error-message">{error}</div>}
