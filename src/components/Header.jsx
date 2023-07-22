@@ -25,12 +25,12 @@ function Header() {
             <ul className="navbar-nav ms-auto">
               <li className="nav-item">
                 <Link className="nav-link" to="/">
-                  <p>Books</p>
+                  <p>BOOKS</p>
                 </Link>
               </li>
               <li className="nav-item">
                 <Link className="nav-link" to="/categories">
-                  <p>Categories</p>
+                  <p>CATEGORIES</p>
                 </Link>
               </li>
             </ul>
