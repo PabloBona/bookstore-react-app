@@ -7,47 +7,40 @@ function BookCard({
 }) {
   const book = books[0];
   return (
-
-    <div className="row bg-white border border-tertiary my-3 rounded">
-      <div className="col-5">
-        <div className="p-3">
-          <div className="text-secondary">Category</div>
-          <div className="fw-bolder fs-3 title">{book.title}</div>
+    <div className="card bg-white border border-tertiary my-3 rounded book-card">
+      <div className="row">
+        <div className="col-12 col-sm-5">
+          <p className="category">Category</p>
+          <h3 className="title">{book.title}</h3>
           <p className="autor">{book.author}</p>
           <div className="mod-books">
-            <div className="remove link-separator mb-2">
+            <div className="remove link-separator">
               <Button onClick={() => {}} className="mb-2">
                 Comment
               </Button>
             </div>
-            <div className="remove link-separator mb-2">
+            <div className="remove link-separator">
               <Button onClick={() => handleRemoveBook(bookId)}>Remove</Button>
             </div>
-            <div className="remove mb-2">
+            <div className="remove">
               <Button onClick={() => {}}>Edit</Button>
             </div>
           </div>
         </div>
-      </div>
-      <div className="d-flex col-4 align-self-center columne">
-        <div className="progress-bar my-3" />
-        <div className="py-3">
-          {' '}
-          <div className="align-self-sm-center fs-2 px-3">64%</div>
-          <p className="align-self-sm-center mx-3 text-secondary">Completed</p>
+        <div className="col-12 col-sm-4 d-flex align-self-center columne">
+          <div className="progress-bar my-3" />
+          <div className="m-3">
+            <div className="align-self-sm-center fs-2">64%</div>
+            <p className="align-self-sm-center text-secondary">Completed</p>
+          </div>
         </div>
-      </div>
-      <div className="col-3 py-3">
-        <div className="my-3">
-          <p className="current-chapter">Current Chapter</p>
+        <div className="col-12 col-sm-3">
+          <p className="current-chapter mb-1">CURRENT CHAPTER</p>
           <p className="chapter">Chapter 23</p>
+          <button className="btn update-progress" type="submit">UPDATE PROGRESS</button>
         </div>
-        <button className="text-white border border-primary rounded text-sm bg-color" type="submit">
-          <div className="m-1 update-progress">UPDATE PROGRESS</div>
-        </button>
       </div>
     </div>
-
   );
 }
 
