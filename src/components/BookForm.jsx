@@ -73,7 +73,7 @@ function BookForm({ url }) {
       <div className="row">
         <div className="col-12">
           <hr className="py-2" />
-          <h2 className="add-tittle">Add New Book</h2>
+          <h2 className="add-tittle">ADD NEW BOOK</h2>
           <form className="col-form-label-lg add-book">
             <label className="px-3" htmlFor="title">
               <input
