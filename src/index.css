@@ -6,11 +6,11 @@ body {
   margin: 0;
   padding: 0;
   height: 100%;
-  background-color:#efefef;
+  background-color: #efefef;
 }
 
 #root {
-  background-color:#f7f5f5;
+  background-color: #f7f5f5;
 }
 
 .link-separator::after {
@@ -100,7 +100,7 @@ body {
   padding: 0.5rem 1.5rem;
   border-radius: 3px;
   background-color: #0290ff;
-  color:white;
+  color: #efefef;
   font-family: 'Roboto Slab', serif;
 }
 
@@ -190,7 +190,7 @@ p.autor {
   .input-title {
     width: 90vw;
   }
-  
+
   .input-author {
     width: 90vw;
   }
