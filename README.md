@@ -67,7 +67,7 @@ The following stacks were used
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ### 🚀 Live Demo <a name="live-demo"></a>
-<a href="https://golden-tanuki-ae9ce2.netlify.app/">Live Demo</a>
+<a href="https://sage-starburst-670a96.netlify.app/">Live Demo</a>
 
 <!-- GETTING STARTED -->
 <br>

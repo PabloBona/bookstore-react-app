@@ -77,7 +77,7 @@ function BookForm({ url }) {
           <form className="col-form-label-lg add-book">
             <label className="px-3" htmlFor="title">
               <input
-                className="px-2 py-1 rounded border border-secondary input-title"
+                className="px-2 py-2 rounded border border-secondary input-title"
                 type="text"
                 id="title"
                 value={title}
