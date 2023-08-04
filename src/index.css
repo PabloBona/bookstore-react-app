@@ -1,20 +1,22 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto+Slab:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;700&display=swap');
 
 body {
-  font-family: 'Bebas Neue', sans-serif;
-  font-family: 'Roboto Slab', serif;
+  font-family: Montserrat, sans-serif;
   margin: 0;
   padding: 0;
   height: 100%;
-  background-color: #efefef;
+  background-color: #fafafa;
 }
 
-#root {
-  background-color: #efefef;
+.navbar {
+  border-bottom: 1px solid #e8e8e8;
 }
 
 .link-separator::after {
   content: "|";
+  margin-right: 0.5rem;
+  color: #e8e8e8;
 }
 
 .btn-reset {
@@ -75,12 +77,157 @@ body {
   width: 0.125rem;
   height: 4.375rem;
   margin: 1.125rem 3.688rem 0 4.938rem;
-  border: solid 1px var(--white-three);
+  border: solid 1px #000;
+  border-radius: 50%;
+}
+
+.oval {
+  border: solid 1px #b3b3b3;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.add-btn,
+.add-btn:hover {
+  font-family: 'Roboto Slab', serif;
+  width: 100%;
+  height: 2.813rem;
+  border-radius: 3px;
+  background-color: #0290ff;
+  color: #eee;
+  font-size: 0.813rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+hr {
+  border-top: 2px solid #e8e8e8;
+  opacity: 0.55;
+  margin-top: 2rem;
+}
+
+input {
+  height: 2.813rem;
+  font-size: 1rem !important;
+}
+
+input::placeholder {
+  color: #c4c4c4 !important;
+}
+
+.progress-bar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  /* stylelint-disable-next-line csstree/validator */
+  background:
+    radial-gradient(closest-side, rgb(255, 255, 255) 80%, transparent 86% 100%),
+    conic-gradient(rgb(55, 156, 246) 64%, rgb(238, 238, 238) 0);
+}
+
+h2 {
+  color: #0290ff;
+}
+
+.book-card {
+  padding: 1.75rem 1.68rem 1.5rem;
+}
+
+button.my-boton {
+  border: none;
+  background: none;
+  padding: 0 0.5rem 0 0;
+  font-size: inherit;
+  cursor: pointer;
+  color: #0290ff;
+  font-family: 'Roboto Slab', serif;
+}
+
+button.card-actions {
+  border: none;
+  background: none;
+  padding: 0 0.5rem 0 0;
+  font-size: 0.875rem;
+  cursor: pointer;
+  color: #4386bf;
+  font-family: 'Roboto Slab', serif;
+}
+
+p.autor {
+  color: #4386bf;
+  font-family: 'Roboto Slab', serif;
+  font-weight: 300;
+  font-size: 0.875rem;
+}
+
+.title {
+  font-family: 'Roboto Slab', serif;
+  font-weight: 700;
+  font-size: 1.375rem;
+  letter-spacing: -0.2px;
+  color: #121212;
+  margin-bottom: 0;
+}
+
+.chapter {
+  font-family: 'Roboto Slab', serif;
+  font-size: 1rem;
+  color: #121212;
+  letter-spacing: -0.4px;
+}
+
+.current-chapter {
+  font-family: 'Roboto Slab', serif;
+  color: #121212;
+  font-size: 0.813rem;
+  opacity: 0.5;
+}
+
+.text-sm {
+  font-size: 0.6rem;
+}
+
+.update-progress,
+.update-progress:hover {
+  font-family: 'Roboto Slab', serif;
+  font-size: 0.813rem;
+  color: #eee;
+  letter-spacing: 0.5px;
+  background-color: #0290ff;
+  border-radius: 3px;
+  padding: 0.5rem 1.375rem;
+}
+
+.add-tittle {
+  font-weight: 700;
+  color: #888;
+  font-size: 1.25rem;
+  letter-spacing: -0.18px;
+  margin-bottom: 1.18rem;
+}
+
+.category {
+  font-size: 0.875rem;
+  font-weight: bold;
+  color: #121212;
+  opacity: 0.5;
+  margin-bottom: 0.25rem;
 }
 
 @media (width <= 1000px) {
   .link-separator::after {
     display: none;
+  }
+
+  .add-book {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
   }
 }
 
